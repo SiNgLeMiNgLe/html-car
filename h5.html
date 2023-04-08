@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Car</title>
+	<style>
+		.car {
+			width: 400px;
+			height: 200px;
+			
+			position: relative;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 0 10px rgba(225, 207, 207, 0.8);
+		}
+
+		
+        .trapezoid {
+	        border-bottom: 55px solid #1d1b1b;
+	        border-left: 28px solid transparent;
+	        border-right: 29px solid transparent;
+	        height: 0;
+            transform: translatex(60%);
+            
+	        width: 122px;
+        }
+
+		.car .headlights {
+			width: 20px;
+			height: 20px;
+			background-color: #b8c580;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 2;
+		}
+
+		.car .headlights.left {
+			left: 50px;
+		}
+
+		.car .headlights.right {
+			right: 50px;
+		}
+
+		
+
+				
+
+		.car .body {
+			width: 300px;
+			height: 100px;
+			background-color: #b61414;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			z-index: 1;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.8);
+		}
+
+		.car .wheels {
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			bottom: 0;
+			z-index: 2;
+		}
+        .wheel {
+  -webkit-animation: spin 5s linear infinite; /* Safari browser */
+  animation: spin 5s linear infinite;}
+
+/* for Safari browser  */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+		.car .wheels:before {
+			content: "";
+			width: 90px;
+			height: 90px;
+			background-color: #090808;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+		}
+
+		.car .wheels.left {
+			left: 50px;
+		}
+
+		.car .wheels.right {
+			right: 50px;
+		}
+		.car .wheels.right:before {
+			left: 30%;
+		}
+
+		.car .wheels.left:after, .car .wheels.right:after {
+			content: "";
+			width: 20px;
+			height: 20px;
+			background-color: #d11212;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+		}
+        
+
+		.car .wheels.left:after {
+			right: 30%;
+		}
+
+		.car .wheels.right:after {
+			left: 30%;
+		}
+	</style>
+</head>
+<body>
+   
+	<div class="car">
+        <div class="trapezoid"></div>
+		<div class="headlights left"></div>
+		<div class="headlights right"></div>
+		<div class="windshield"></div>
+		<div class="wheel"></div>
+		<div class="body"></div>
+		<div class="wheels left"></div>
+		<div class="wheels right"></div>
+	</div>
+</body>
+</html>
